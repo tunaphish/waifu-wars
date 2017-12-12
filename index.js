@@ -1,11 +1,17 @@
 const express = require('express');
 const app = express();
 const keys = require('./config/keys');
+const options = {
+    'host': keys.mysqlHost,
+    'user': keys.mysqlUser,
+    'password': keys.mysqlPassword,
+    'database': keys.mysqlDatabase,
+}
 
-
-
-require('./routes')(app);
-
+const mysql = require('mysql2/promise');
+mysql.createConnection(options).then(db => {
+  require('./routes')(app,db)
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

@@ -1,15 +1,10 @@
-const mongoose = require('mongoose');
-const Character = mongoose.model('characters');
-
-module.exports = app => {
+module.exports = (app,db) => {
   app.get('/', (req,res) => {
     res.send('hi there');
   });
 
   app.get('/api/battle', async (req,res) => {
-    let character = await Character.aggregate(
-      { $sample: { size: 2 } }
-    )
-    res.send(character);
+    const [rows, fields] = await db.execute('SELECT * FROM user');
+    res.send(rows);
   });
 }
