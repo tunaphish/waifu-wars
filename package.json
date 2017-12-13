@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "proxy": {
+    "/api/*": {
+      "target": "http://localhost:5000"
+    }
+  },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon index.js",
@@ -14,6 +19,7 @@
   "dependencies": {
     "concurrently": "^3.5.1",
     "express": "^4.16.2",
+    "materialize-css": "^0.100.2",
     "mysql2": "^1.5.1",
     "nodemon": "^1.12.5",
     "react-router-dom": "^4.2.2"
