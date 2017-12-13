@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Waifu from './Waifu.js';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -15,27 +16,19 @@ class Landing extends Component {
     return (
       <div className='row'>
         <div className='col sm12 m5'>
-          <div className='card small'>
-            <div className="card-image">
-              <img src={process.env.PUBLIC_URL + '/characters/' + this.props.battle[0].picture }/>
-            </div>
-            <div className='card-content'>
-              {this.props.battle[0].waifuName}
-            </div>
-          </div>
+          <Waifu
+            name={this.props.battle[0].waifuName}
+            picture={this.props.battle[0].picture}
+          />
         </div>
         <div className='col sm12 m2'>
          VS
         </div>
         <div className='col sm12 m5'>
-          <div className='card small'>
-            <div className="card-image">
-              <img src={process.env.PUBLIC_URL + '/characters/' + this.props.battle[1].picture }/>
-            </div>
-            <div className='card-content'>
-              {this.props.battle[1].waifuName}
-            </div>
-          </div>
+          <Waifu
+            name={this.props.battle[1].waifuName}
+            picture={this.props.battle[1].picture}
+          />
         </div>
       </div>
     )
