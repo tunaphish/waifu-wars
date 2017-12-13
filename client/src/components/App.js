@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './Header';
+import Landing from './Landing';
 const Footer = () => <div>Footer</div>;
-const Landing = () => <div>Landing</div>;
 const About = () => <div>About</div>;
 
 class App extends Component {
@@ -14,8 +14,8 @@ class App extends Component {
           <div>
             <Header />
             <Switch>
-              <Route exact path='/about' component={About} />
-              <Route exact path='/' component={Landing} />
+              <Route path='/about' component={About} />
+              <Route path='/' component={Landing} />
             </Switch>
             <Footer/>
           </div>
