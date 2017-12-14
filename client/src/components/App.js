@@ -15,7 +15,7 @@ class App extends Component {
           <div>
             <Header />
             <Switch>
-              <Route path='/division/ranking' component={DivisionRanking} />
+              <Route path='/ranking' component={DivisionRanking} />
               <Route path='/about' component={About} />
               <Route path='/' component={Landing} />
             </Switch>

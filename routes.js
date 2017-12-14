@@ -1,6 +1,6 @@
 const divisionListQuery = `SELECT *
   FROM division;`;
-const divisionRankingQuery = `SELECT waifuName, currentRank
+const divisionRankingQuery = `SELECT waifuName, currentRank, picture, w.waifuId
   FROM divisionWaifus dw, waifu w
   WHERE dw.divisionId = ?
   AND dw.waifuId = w.waifuId
