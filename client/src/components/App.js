@@ -8,6 +8,7 @@ import DivisionList from './DivisionList';
 import DivisionBattle from './DivisionBattle.js'
 import DivisionRanking from './DivisionRanking';
 const About = () => <div>About</div>;
+const fourOhFour = () => <div>404 Placeholder</div>;
 
 class App extends Component {
   render() {
@@ -21,11 +22,12 @@ class App extends Component {
               }}
             />
             <Switch>
-              <Route path='/division/list' component={DivisionList} />
-              <Route path='/division/:divisionId/battle' component={DivisionBattle} />
-              <Route path='/division/:divisionId/ranking' component={DivisionRanking} />
-              <Route path='/about' component={About} />
-              <Route path='/' component={Landing} />
+              <Route exact path='/division/list' component={DivisionList} />
+              <Route exact path='/division/:divisionId/battle' component={DivisionBattle} />
+              <Route exact path='/division/:divisionId/ranking' component={DivisionRanking} />
+              <Route exact path='/about' component={About} />
+              <Route exact path='/' component={Landing} />
+              <Route component={fourOhFour} />
             </Switch>
             <Footer/>
           </div>
