@@ -17,8 +17,8 @@ class App extends Component {
           <div>
             <Header />
             <Switch>
+              <Route path='/division/list' component={DivisionList} />
               <Route path='/division/:divisionId' component={DivisionBattle} />
-              <Route path='/divisions' component={DivisionList} />
               <Route path='/ranking' component={DivisionRanking} />
               <Route path='/about' component={About} />
               <Route path='/' component={Landing} />
