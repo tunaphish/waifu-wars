@@ -30,7 +30,6 @@ class DivisionList extends Component {
 }
 
 function mapStateToProps({ divisionList }) {
-  console.log(divisionList);
   return { divisionList };
 }
 
