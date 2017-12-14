@@ -8,6 +8,10 @@ class Landing extends Component {
     this.props.fetchBattle();
   }
 
+  handleClick = () => {
+    this.props.fetchBattle();
+  }
+
   render() {
     if (this.props.battle.length === 0) {
       return <div>Loading</div>;
@@ -16,19 +20,23 @@ class Landing extends Component {
     return (
       <div className='row'>
         <div className='col sm12 m5'>
-          <Waifu
-            name={this.props.battle[0].waifuName}
-            picture={this.props.battle[0].picture}
-          />
+          <a href='#' onClick={this.handleClick}>
+            <Waifu
+              name={this.props.battle[0].waifuName}
+              picture={this.props.battle[0].picture}
+            />
+          </a>
         </div>
         <div className='col sm12 m2'>
          VS
         </div>
         <div className='col sm12 m5'>
+        <a href='#' onClick={this.handleClick}>
           <Waifu
             name={this.props.battle[1].waifuName}
             picture={this.props.battle[1].picture}
           />
+        </a>
         </div>
       </div>
     )
