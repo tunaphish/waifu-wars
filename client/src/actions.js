@@ -15,3 +15,8 @@ export const postBattle = (firstWaifuWon, waifus) => async dispatch => {
   await axios.post('api/division/1/battle', battleResult);
   dispatch({type: 'POST_BATTLE'});
 }
+
+export const fetchDivisionWaifus = () => async dispatch => {
+  const res = await axios.get('api/divison/1/ranking');
+  dispatch({type: 'FETCH_DIVISION_WAIFUS', payload: res.data});
+}
