@@ -12,7 +12,7 @@ class DivisionRanking extends Component {
       return (
         <li className='collection-item' key={waifuId}>
           <span className='title'>{waifuName}</span>
-          <p>{currentRank}</p>
+          <div className='secondary-content'>{currentRank}</div>
         </li>
       )
     })
