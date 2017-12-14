@@ -16,10 +16,8 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Route
-              path='/'
               render={(props) => {
-                console.log(props.location);
-                return <Header />
+                return <Header {...props} />
               }}
             />
             <Switch>
