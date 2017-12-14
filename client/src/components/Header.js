@@ -9,7 +9,6 @@ class Header extends Component {
           <ul>
             <li><Link to='/'>Landing</Link></li>
             <li><Link to='/about'>About</Link></li>
-            <li><Link to='/ranking'>Division Ranking</Link></li>
             <li><Link to='/division/list'>Division List</Link></li>
           </ul>
         </div>
