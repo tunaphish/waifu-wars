@@ -8,7 +8,8 @@ class Landing extends Component {
     this.props.fetchBattle();
   }
 
-  handleClick = () => {
+  handleClick = (firstWaifuWon) => {
+    this.props.postBattle(firstWaifuWon, this.props.battle);
     this.props.fetchBattle();
   }
 
@@ -20,7 +21,7 @@ class Landing extends Component {
     return (
       <div className='row'>
         <div className='col sm12 m5'>
-          <a href='#' onClick={this.handleClick}>
+          <a href='#' onClick={() => this.handleClick(true)}>
             <Waifu
               name={this.props.battle[0].waifuName}
               picture={this.props.battle[0].picture}
@@ -31,7 +32,7 @@ class Landing extends Component {
          VS
         </div>
         <div className='col sm12 m5'>
-        <a href='#' onClick={this.handleClick}>
+        <a href='#' onClick={() => this.handleClick(false)}>
           <Waifu
             name={this.props.battle[1].waifuName}
             picture={this.props.battle[1].picture}
