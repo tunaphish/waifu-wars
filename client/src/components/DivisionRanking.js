@@ -4,7 +4,7 @@ import * as actions from '../actions';
 
 class DivisionRanking extends Component {
   componentDidMount() {
-    this.props.fetchDivisionWaifus();
+    this.props.fetchDivisionWaifus(1);
   }
 
   renderWaifus() {
