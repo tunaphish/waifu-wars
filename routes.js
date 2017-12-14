@@ -35,7 +35,7 @@ module.exports = (app,db) => {
     const { winner, loser } = req.body;
 
     const kFactor = 32;
-    const winnerExpected = 1/(1 + Math.pow(10,(winner.currentRank - loser.currentRank)/400));
+    const winnerExpected = 1/(1 + Math.pow(10,(loser.currentRank - winner.currentRank)/400));
     const loserExpected = 1 - winnerExpected;
     const winnerNewScore = winner.currentRank + kFactor * (1 - winnerExpected);
     const loserNewScore = loser.currentRank + kFactor * (0 - loserExpected);
