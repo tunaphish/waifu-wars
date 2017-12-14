@@ -15,10 +15,16 @@ class App extends Component {
       <div className='container'>
         <BrowserRouter>
           <div>
-            <Header />
+            <Route
+              path='/'
+              render={(props) => {
+                console.log(props.location);
+                return <Header />
+              }}
+            />
             <Switch>
               <Route path='/division/list' component={DivisionList} />
-              <Route path='/division/:divisionId' component={DivisionBattle} />
+              <Route path='/division/:divisionId/battle' component={DivisionBattle} />
               <Route path='/ranking' component={DivisionRanking} />
               <Route path='/about' component={About} />
               <Route path='/' component={Landing} />

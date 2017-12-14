@@ -11,7 +11,7 @@ class DivisionList extends Component {
   renderDivisions() {
     return this.props.divisionList.map(({ divisionName, divisionId }) => {
       return (
-        <Link to={`/division/${divisionId}`} key={divisionId}>
+        <Link to={`/division/${divisionId}/battle`} key={divisionId}>
           <li className='collection-item'><span className='title'>{divisionName}</span></li>
         </Link>
       )
