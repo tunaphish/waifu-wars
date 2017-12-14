@@ -5,14 +5,14 @@ export const fetchDivisionList = () => async dispatch => {
   dispatch({type: 'FETCH_DIVISION_LIST', payload: res.data});
 }
 
-export const fetchBattle = () => async dispatch => {
-  const res = await axios.get('api/division/1/battle');
+export const fetchBattle = divisionId => async dispatch => {
+  const res = await axios.get('api/division/' + divisionId + '/battle');
   dispatch({type: 'FETCH_BATTLE', payload: res.data});
 }
 
-export const postBattle = (firstWaifuWon, waifus) => async dispatch => {
+export const postBattle = (firstWaifuWon, waifus, divisionId) => async dispatch => {
   const battleResult = firstWaifuWon ? { winner: waifus[0], loser: waifus[1] } : { winner: waifus[1], loser: waifus[0] };
-  await axios.post('api/division/1/battle', battleResult);
+  await axios.post('api/division/' + divisionId + '/battle', battleResult);
   dispatch({type: 'POST_BATTLE'});
 }
 
