@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './Header';
+import Footer from './Footer';
 import Landing from './Landing';
 import DivisionList from './DivisionList';
 import DivisionBattle from './DivisionBattle.js'
 import DivisionRanking from './DivisionRanking';
-const Footer = () => <div>Footer</div>;
 const About = () => <div>About</div>;
 
 class App extends Component {
