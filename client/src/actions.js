@@ -2,12 +2,12 @@ import axios from 'axios';
 
 export const fetchDivisionList = () => async dispatch => {
   const res = await axios.get('api/division/list');
-  dispatch({type: 'FETCH_DIVISION_LIST', payload: res});
+  dispatch({type: 'FETCH_DIVISION_LIST', payload: res.data});
 }
 
 export const fetchBattle = () => async dispatch => {
   const res = await axios.get('api/division/1/battle');
-  dispatch({type: 'FETCH_BATTLE', payload: res});
+  dispatch({type: 'FETCH_BATTLE', payload: res.data});
 }
 
 export const postBattle = (firstWaifuWon, waifus) => async dispatch => {
