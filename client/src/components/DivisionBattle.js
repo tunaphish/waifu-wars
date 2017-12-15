@@ -4,15 +4,20 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 class DivisionBattle extends Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
     let { match: { params } } = this.props;
-    this.props.fetchBattle(params.divisionId || 1);
+    const divisionId = params.divisionId || 1;
+    this.state = { divisionId };
+  }
+
+  componentDidMount() {
+    this.props.fetchBattle(this.state.divisionId);
   }
 
   handleClick = (firstWaifuWon) => {
-    let { match: { params } } = this.props;
-    this.props.postBattle(firstWaifuWon, this.props.battle,params.divisionId || 1);
-    this.props.fetchBattle(params.divisionId || 1);
+    this.props.postBattle(firstWaifuWon, this.props.battle, this.state.divisionId);
+    this.props.fetchBattle(this.state.divisionId);
   }
 
   render() {
