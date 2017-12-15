@@ -36,7 +36,7 @@ class DivisionBattle extends Component {
           </a>
         </div>
         <div className='col sm12 m2'>
-         VS
+         <h1 className='versus'>VS</h1>
         </div>
         <div className='col sm12 m5'>
         <a onClick={() => this.handleClick(false)}>
