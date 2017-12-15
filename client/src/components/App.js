@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
-import Landing from './Landing';
 import DivisionList from './DivisionList';
 import DivisionBattle from './DivisionBattle.js'
 import DivisionRanking from './DivisionRanking';
@@ -29,7 +28,7 @@ class App extends Component {
               <Route exact path='/division/:divisionId/battle' component={DivisionBattle} />
               <Route exact path='/division/:divisionId/ranking' component={DivisionRanking} />
               <Route exact path='/about' component={About} />
-              <Route exact path='/' component={Landing} />
+              <Route exact path='/' component={DivisionBattle} />
               <Route component={fourOhFour} />
             </Switch>
             <Footer/>

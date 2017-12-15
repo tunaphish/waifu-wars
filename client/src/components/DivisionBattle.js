@@ -6,13 +6,13 @@ import * as actions from '../actions';
 class DivisionBattle extends Component {
   componentDidMount() {
     let { match: { params } } = this.props;
-    this.props.fetchBattle(params.divisionId);
+    this.props.fetchBattle(params.divisionId || 1);
   }
 
   handleClick = (firstWaifuWon) => {
-    this.props.postBattle(firstWaifuWon, this.props.battle,1);
     let { match: { params } } = this.props;
-    this.props.fetchBattle(params.divisionId);
+    this.props.postBattle(firstWaifuWon, this.props.battle,params.divisionId || 1);
+    this.props.fetchBattle(params.divisionId || 1);
   }
 
   render() {
