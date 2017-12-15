@@ -7,7 +7,6 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema waifuWarsDb
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `waifuWarsDb` ;
 
 -- -----------------------------------------------------
 -- Schema waifuWarsDb
@@ -22,7 +21,7 @@ DROP TABLE IF EXISTS `waifuWarsDb`.`division` ;
 
 CREATE TABLE IF NOT EXISTS `waifuWarsDb`.`division` (
   `divisionId` INT NOT NULL AUTO_INCREMENT,
-  `divisionName` VARCHAR(255) NULL,
+  `divisionName` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`divisionId`))
 ENGINE = InnoDB;
 
@@ -34,8 +33,8 @@ DROP TABLE IF EXISTS `waifuWarsDb`.`waifu` ;
 
 CREATE TABLE IF NOT EXISTS `waifuWarsDb`.`waifu` (
   `waifuId` INT NOT NULL AUTO_INCREMENT,
-  `waifuName` VARCHAR(255) NULL,
-  `picture` VARCHAR(255) NULL,
+  `waifuName` VARCHAR(255) NOT NULL,
+  `picture` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`waifuId`))
 ENGINE = InnoDB;
 
@@ -47,9 +46,9 @@ DROP TABLE IF EXISTS `waifuWarsDb`.`divisionWaifus` ;
 
 CREATE TABLE IF NOT EXISTS `waifuWarsDb`.`divisionWaifus` (
   `divisionWaifuId` INT NOT NULL AUTO_INCREMENT,
-  `currentRank` INT NULL,
-  `divisionId` INT NULL,
-  `waifuId` INT NULL,
+  `currentRank` INT NOT NULL,
+  `divisionId` INT NOT NULL,
+  `waifuId` INT NOT NULL,
   PRIMARY KEY (`divisionWaifuId`),
   INDEX `divisionId_idx` (`divisionId` ASC),
   INDEX `characterId_idx` (`waifuId` ASC),
@@ -73,9 +72,9 @@ DROP TABLE IF EXISTS `waifuWarsDb`.`rankLog` ;
 
 CREATE TABLE IF NOT EXISTS `waifuWarsDb`.`rankLog` (
   `rankId` INT NOT NULL AUTO_INCREMENT,
-  `date` DATETIME NULL,
-  `rank` INT NULL,
-  `divisionWaifuId` INT NULL,
+  `date` DATETIME NOT NULL,
+  `rank` INT NOT NULL,
+  `divisionWaifuId` INT NOT NULL,
   PRIMARY KEY (`rankId`),
   INDEX `divisionWaifuId_idx` (`divisionWaifuId` ASC),
   CONSTRAINT `divisionWaifuId`
@@ -84,6 +83,7 @@ CREATE TABLE IF NOT EXISTS `waifuWarsDb`.`rankLog` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

@@ -8,22 +8,34 @@ INSERT INTO waifu(waifuName, picture) VALUES('Naoto Shirogane', 'naoto-shirogane
 INSERT INTO waifu(waifuName, picture) VALUES('Yukiko Amagi', 'yukiko-amagi.png');
 
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-	(SELECT divisionId
-	FROM division
-    WHERE divisionName = 'Persona Series'), 1, 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Persona Series'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Chie Satonaka'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-	(SELECT divisionId
-	FROM division
-    WHERE divisionName = 'Persona Series'), 2, 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Persona Series'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Naoto Shirogane'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-	(SELECT divisionId
-	FROM division
-    WHERE divisionName = 'Persona Series'), 3, 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Persona Series'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Rise Kujikawa'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-	(SELECT divisionId
-	FROM division
-    WHERE divisionName = 'Persona Series'), 4, 1400);
-    
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Persona Series'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Yukiko Amagi'), 1400);
+
     
 INSERT INTO division(divisionName) VALUES('Overwatch');
 
@@ -54,180 +66,180 @@ INSERT INTO waifu(waifuName, picture) VALUES('Zarya', 'zarya.jpg');
 INSERT INTO waifu(waifuName, picture) VALUES('Zenyatta', 'zenyatta.jpg');
 
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Bastion'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Bastion'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Doomfist'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Doomfist'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Dva'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Dva'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Genji'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Genji'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Hanzo'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Hanzo'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Junkrat'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Junkrat'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Lucio'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Lucio'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Mccree'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Mccree'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Mei'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Mei'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Mercy'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Mercy'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Moira'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Moira'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Orisa'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Orisa'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Pharah'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Pharah'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Reaper'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Reaper'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Reinhardt'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Reinhardt'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Roadhog'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Roadhog'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Soldier 76'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Soldier 76'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Sombra'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Sombra'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Symmetra'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Symmetra'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Torbjorn'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Torbjorn'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Tracer'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Tracer'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Widowmaker'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Widowmaker'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Winston'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Winston'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Zarya'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Zarya'), 1400);
 INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
-(SELECT divisionId
-FROM division
-WHERE divisionName = 'Overwatch'),
-(SELECT waifuId
-FROM waifu
-WHERE waifuName = 'Zenyatta'), 1400);
+  (SELECT divisionId
+  FROM division
+  WHERE divisionName = 'Overwatch'),
+  (SELECT waifuId
+  FROM waifu
+  WHERE waifuName = 'Zenyatta'), 1400);
 
 
 
