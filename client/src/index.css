@@ -1,15 +1,13 @@
-
-
 html, body, .container, .page, #root {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-.content {
-  flex: 1 auto;
-}
-
 .brand-logo, .versus, .waifu-card {
   font-family: 'Megrim', cursive;
+}
+
+.content {
+  flex: 1 0 auto;
 }
