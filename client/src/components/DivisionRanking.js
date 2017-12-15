@@ -23,7 +23,7 @@ class DivisionRanking extends Component {
     if (this.props.divisionWaifus === 0) return <div>Loading</div>
 
     return (
-      <ul className='collection'>
+      <ul className='collection flow-text'>
         {this.renderWaifus()}
       </ul>
     )

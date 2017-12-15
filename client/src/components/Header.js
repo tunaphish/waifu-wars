@@ -15,7 +15,7 @@ class Header extends Component {
 
     return (
       <nav>
-        <div className='nav-wrapper'>
+        <div className='nav-wrapper flow-text'>
           <ul>
             <li><Link to='/division/list'>Division List</Link></li>
             <li><Link to='/about'>About</Link></li>
