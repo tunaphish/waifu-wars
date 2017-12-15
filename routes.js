@@ -14,6 +14,14 @@ const battleQuery = `SELECT *
 const updateRankQuery = `UPDATE divisionWaifus
   SET currentRank = ?
   WHERE divisionWaifus.divisionWaifuId = ?;`;
+const waifuQuery = `SELECT rank, divisionId
+  FROM waifu w, divisionWaifus dw, rankLog r
+  WHERE w.waifuId = ?
+  AND w.waifuId = dw.waifuId
+  AND r.divisionWaifuId = dw.divisionWaifuId
+  ORDER BY divisionId DESC, date DESC;`;
+
+
 
 module.exports = (app,db) => {
   app.get('/api/division/list', async (req,res) => {
@@ -44,5 +52,10 @@ module.exports = (app,db) => {
     await db.execute(updateRankQuery, [loserNewScore, loser.divisionWaifuId]);
 
     res.send('updated');
+  });
+
+  app.get('/api/waifu/:waifuId', async (req,res) => {
+    const [rows, fields] = await db.execute(waifuQuery, [req.params.waifuId]);
+    res.send(rows);
   });
 }
