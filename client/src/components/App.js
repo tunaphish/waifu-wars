@@ -17,20 +17,22 @@ class App extends Component {
     return (
       <div className='container'>
         <BrowserRouter>
-          <div>
+          <div className='page'>
             <Route
               render={(props) => {
                 return <Header {...props} />
               }}
             />
-            <Switch>
-              <Route exact path='/division/list' component={DivisionList} />
-              <Route exact path='/division/:divisionId/battle' component={DivisionBattle} />
-              <Route exact path='/division/:divisionId/ranking' component={DivisionRanking} />
-              <Route exact path='/about' component={About} />
-              <Route exact path='/' component={DivisionBattle} />
-              <Route component={fourOhFour} />
-            </Switch>
+            <div className='content'>
+              <Switch>
+                <Route exact path='/division/list' component={DivisionList} />
+                <Route exact path='/division/:divisionId/battle' component={DivisionBattle} />
+                <Route exact path='/division/:divisionId/ranking' component={DivisionRanking} />
+                <Route exact path='/about' component={About} />
+                <Route exact path='/' component={DivisionBattle} />
+                <Route component={fourOhFour} />
+              </Switch>
+            </div>
             <Footer/>
           </div>
         </BrowserRouter>
