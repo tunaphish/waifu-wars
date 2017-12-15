@@ -7,8 +7,11 @@ import Landing from './Landing';
 import DivisionList from './DivisionList';
 import DivisionBattle from './DivisionBattle.js'
 import DivisionRanking from './DivisionRanking';
+
+import image404 from '../404.jpg';
+
 const About = () => <div>About</div>;
-const fourOhFour = () => <div>404 Placeholder</div>;
+const fourOhFour = () => <img src={image404} alt='404' className='responsive-img'/>;
 
 class App extends Component {
   render() {
