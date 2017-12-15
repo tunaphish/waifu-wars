@@ -5,12 +5,12 @@ import * as actions from '../actions';
 
 class Landing extends Component {
   componentDidMount() {
-    this.props.fetchBattle(1);
+    this.props.fetchBattle(3);
   }
 
   handleClick = (firstWaifuWon) => {
     this.props.postBattle(firstWaifuWon, this.props.battle,1);
-    this.props.fetchBattle(1);
+    this.props.fetchBattle(3);
   }
 
   render() {

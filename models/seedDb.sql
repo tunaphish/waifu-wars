@@ -1,5 +1,6 @@
 USE `waifuWarsDb` ;
 
+INSERT INTO division(divisionName) VALUES('All');
 INSERT INTO division(divisionName) VALUES('Persona Series');
 INSERT INTO division(divisionName) VALUES('Overwatch');
 
@@ -397,6 +398,11 @@ INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) VALUES(
   (SELECT waifuId
   FROM waifu
   WHERE waifuName = 'Zenyatta'), 1400);
+  
+INSERT INTO divisionWaifus(divisionId, waifuId, currentRank) 
+SELECT divisionId, waifuId, 1400
+FROM division d, waifu w
+WHERE d.divisionName = 'ALL'
 
 
 

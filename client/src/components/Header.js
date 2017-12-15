@@ -21,7 +21,7 @@ class Header extends Component {
             <li><Link to='/about'>About</Link></li>
             {divisionLink}
           </ul>
-          <div className='right brand-logo'><Link to='/'>Landing</Link></div>
+          <div className='right brand-logo'><Link to='/'>WAIFU WARS</Link></div>
         </div>
       </nav>
     )
