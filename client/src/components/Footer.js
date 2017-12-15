@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => {
   return (
-    <footer class="page-footer">
+    <footer className="page-footer">
       © 2018 Copyright Tunaphish
     </footer>
   )
