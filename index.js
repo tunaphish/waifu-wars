@@ -7,14 +7,8 @@ app.use(express.static(__dirname + '/public'));
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const options = {
-    'host': keys.mysqlHost,
-    'user': keys.mysqlUser,
-    'password': keys.mysqlPassword,
-    'database': keys.mysqlDatabase,
-}
 const mysql = require('mysql2/promise');
-mysql.createConnection(options).then(db => {
+mysql.createConnection(keys).then(db => {
   require('./routes')(app,db)
 });
 
