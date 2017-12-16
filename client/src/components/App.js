@@ -10,7 +10,7 @@ import DivisionRanking from './DivisionRanking';
 import image404 from '../404.jpg';
 
 const About = () => <div>About</div>;
-const fourOhFour = () => <img src={image404} alt='404' className='responsive-img'/>;
+const fourOhFour = () => <img src={image404} alt='404' />;
 
 class App extends Component {
   render() {
@@ -29,7 +29,7 @@ class App extends Component {
                 <Route exact path='/division/:divisionId/battle' component={DivisionBattle} />
                 <Route exact path='/division/:divisionId/ranking' component={DivisionRanking} />
                 <Route exact path='/about' component={About} />
-                //Added a key to force remounting index when navigating from another DivisionBattle
+                {/*Added a key to force remounting index when navigating from another DivisionBattle*/}
                 <Route exact path='/' component={DivisionBattle} key={'index'}/>
                 <Route component={fourOhFour} />
               </Switch>

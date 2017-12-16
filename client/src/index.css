@@ -7,6 +7,7 @@ html, body, .container, .page, #root {
 
 nav {
   background: pink;
+  margin-bottom: 10px;
 }
 
 .brand-logo, .versus, .waifu-card {
@@ -16,6 +17,7 @@ nav {
 
 .content {
   flex: 1 0 auto;
+  text-align: center;
 }
 
 .waifu-card  {
