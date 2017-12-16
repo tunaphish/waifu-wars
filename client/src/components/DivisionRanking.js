@@ -9,12 +9,13 @@ class DivisionRanking extends Component {
   }
 
   renderWaifus() {
-    return this.props.divisionWaifus.map(({waifuId, waifuName, picture, currentRank}) => {
+    return this.props.divisionWaifus.map(({waifuId, waifuName, picture, currentRank, place}) => {
       return (
-        <li className='collection-item' key={waifuId}>
-          <span className='title'>{waifuName}</span>
-          <div className='secondary-content'>{currentRank}</div>
-        </li>
+        <tr key={waifuId}>
+          <th>{place}</th>
+          <th>{waifuName}</th>
+          <th>{currentRank}</th>
+        </tr>
       )
     })
   }
@@ -23,9 +24,18 @@ class DivisionRanking extends Component {
     if (this.props.divisionWaifus === 0) return <div>Loading</div>
 
     return (
-      <ul className='collection flow-text'>
-        {this.renderWaifus()}
-      </ul>
+      <table className='striped'>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>ELO</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.renderWaifus()}
+        </tbody>
+      </table>
     )
   }
 }

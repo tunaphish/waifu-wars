@@ -1,7 +1,9 @@
 const divisionListQuery = `SELECT *
   FROM division;`;
-const divisionRankingQuery = `SELECT waifuName, currentRank, picture, w.waifuId
-  FROM divisionWaifus dw, waifu w
+const divisionRankingQuery = `SELECT waifuName, currentRank, picture, w.waifuId,
+  IF(currentRank=@_last_rank,@curPlace:=@curPlace,@curPlace:=@_sequence) AS place,
+  @_sequence:=@_sequence+1,@_last_rank:=currentRank
+  FROM divisionWaifus dw, waifu w, (SELECT @curPlace := 1, @_sequence:=1, @_last_rank:=0) r
   WHERE dw.divisionId = ?
   AND dw.waifuId = w.waifuId
   ORDER BY currentRank DESC;`;
