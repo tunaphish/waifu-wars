@@ -4,6 +4,10 @@ html, body, .container, .page, #root {
   flex-direction: column;
 }
 
+nav {
+  background: pink;
+}
+
 .brand-logo, .versus, .waifu-card {
   font-family: 'Megrim', cursive;
   text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
