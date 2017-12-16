@@ -1,6 +1,6 @@
 html, body, .container, .page, #root {
   display: flex;
-  min-height: 100vh;
+  min-height: 98vh;
   flex-direction: column;
 }
 
@@ -14,6 +14,11 @@ html, body, .container, .page, #root {
 }
 
 .waifu-card  {
+  font-size: 1.7em;
+  color: pink;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+
+  vertical-align: text-bottom;
   border-radius: 0px;
   margin: 20px;
   box-shadow: 10px 10px pink;

@@ -23,7 +23,7 @@ class App extends Component {
                 return <Header {...props} />
               }}
             />
-            <div className='card content'>
+            <div className='content'>
               <Switch>
                 <Route exact path='/division/list' component={DivisionList} />
                 <Route exact path='/division/:divisionId/battle' component={DivisionBattle} />

@@ -18,7 +18,6 @@ class Header extends Component {
         <div className='nav-wrapper flow-text'>
           <ul>
             <li><Link to='/division/list'>Division List</Link></li>
-            <li><Link to='/about'>About</Link></li>
             {divisionLink}
           </ul>
           <div className='right brand-logo'><Link to='/'>WAIFU WARS</Link></div>
