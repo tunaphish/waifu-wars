@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const keys = require('./config/keys');
 
+app.use(express.static(__dirname + '/public'));
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
