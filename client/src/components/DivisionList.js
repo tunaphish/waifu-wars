@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Preloader from './Preloader';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -19,7 +20,7 @@ class DivisionList extends Component {
   }
 
   render() {
-    if (this.props.divisionWaifus === 0) return <div>Loading</div>
+    if (this.props.divisionList.length === 0) return <Preloader />
 
     return (
       <ul className='collection'>

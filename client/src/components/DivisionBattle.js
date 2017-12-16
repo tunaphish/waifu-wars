@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Waifu from './Waifu.js';
+import Preloader from './Preloader';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -21,9 +22,7 @@ class DivisionBattle extends Component {
   }
 
   render() {
-    if (this.props.battle.length === 0) {
-      return <div>Loading</div>;
-    }
+    if (this.props.battle.length === 0) return <Preloader />;
 
     return (
       <div className='row'>

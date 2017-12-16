@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Preloader from './Preloader';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
@@ -21,7 +22,7 @@ class DivisionRanking extends Component {
   }
 
   render() {
-    if (this.props.divisionWaifus === 0) return <div>Loading</div>
+    if (this.props.divisionWaifus.length === 0) return <Preloader />;
 
     return (
       <table className='striped'>
