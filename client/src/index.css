@@ -2,6 +2,7 @@ html, body, .container, .page, #root {
   display: flex;
   min-height: 98vh;
   flex-direction: column;
+  font-family: 'Raleway', sans-serif;
 }
 
 nav {

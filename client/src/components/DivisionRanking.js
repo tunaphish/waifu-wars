@@ -13,9 +13,9 @@ class DivisionRanking extends Component {
     return this.props.divisionWaifus.map(({waifuId, waifuName, picture, currentRank, place}) => {
       return (
         <tr key={waifuId}>
-          <th>{place}</th>
-          <th>{waifuName}</th>
-          <th>{currentRank}</th>
+          <td>{place}</td>
+          <td>{waifuName}</td>
+          <td>{currentRank}</td>
         </tr>
       )
     })
