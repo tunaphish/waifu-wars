@@ -2,8 +2,10 @@ import React from 'react';
 
 export default () => {
   return (
-    <footer className="page-footer">
-      © 2018 Copyright Tunaphish
+    <footer className="footer-copyright">
+      <div className='grey-text right'>
+        © 2018 Copyright Tunaphish
+      </div>
     </footer>
   )
 }
