@@ -29,7 +29,8 @@ class App extends Component {
                 <Route exact path='/division/:divisionId/battle' component={DivisionBattle} />
                 <Route exact path='/division/:divisionId/ranking' component={DivisionRanking} />
                 <Route exact path='/about' component={About} />
-                <Route exact path='/' component={DivisionBattle} />
+                //Added a key to force remounting index when navigating from another DivisionBattle
+                <Route exact path='/' component={DivisionBattle} key={'index'}/>
                 <Route component={fourOhFour} />
               </Switch>
             </div>

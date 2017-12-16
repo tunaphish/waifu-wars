@@ -15,10 +15,13 @@ class DivisionBattle extends Component {
   componentDidMount() {
     this.props.fetchBattle(this.state.divisionId);
   }
+  componentWillUnmount(){
+    this.props.clearBattle();
+  }
 
-  handleClick = (firstWaifuWon) => {
-    this.props.postBattle(firstWaifuWon, this.props.battle, this.state.divisionId);
-    this.props.fetchBattle(this.state.divisionId);
+  handleClick = async (firstWaifuWon) => {
+    await this.props.postBattle(firstWaifuWon, this.props.battle, this.state.divisionId);
+    await this.props.fetchBattle(this.state.divisionId);
   }
 
   render() {
