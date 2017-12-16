@@ -3,8 +3,8 @@ USE `waifuWarsDb` ;
 DROP EVENT IF EXISTS logScoresEvent;
 
 delimiter |
-CREATE EVENT logScoresEvent 
-	ON SCHEDULE EVERY 5 MINUTE
+CREATE EVENT logScoresEvent
+	ON SCHEDULE EVERY 30 MINUTE
 	DO
 		BEGIN
 			INSERT INTO rankLog(divisionWaifuId, date, rank)

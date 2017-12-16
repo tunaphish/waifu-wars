@@ -29,7 +29,7 @@ class DivisionBattle extends Component {
 
     return (
       <div className='row'>
-        <div className='col s12 m6'>
+        <div className='col s6'>
           <a onClick={() => this.handleClick(true)}>
             <Waifu
               name={this.props.battle[0].waifuName}
@@ -37,7 +37,7 @@ class DivisionBattle extends Component {
             />
           </a>
         </div>
-        <div className='col s12 m6'>
+        <div className='col s6'>
           <a onClick={() => this.handleClick(false)}>
             <Waifu
               name={this.props.battle[1].waifuName}
