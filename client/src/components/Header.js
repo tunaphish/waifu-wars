@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Sider from './Sider';
 
 class Header extends Component {
   render() {
@@ -20,7 +21,7 @@ class Header extends Component {
       <nav>
         <div className='nav-wrapper flow-text'>
           <ul>
-            <li><Link to='/division/list'><i className="fa fa-bars" aria-hidden="true"></i></Link></li>
+            <li><Sider /></li>
             {divisionLink}
           </ul>
           <div className='right brand-logo'><Link to='/'>WAIFU WARS</Link></div>

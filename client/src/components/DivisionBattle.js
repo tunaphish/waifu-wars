@@ -15,6 +15,13 @@ class DivisionBattle extends Component {
   componentDidMount() {
     this.props.fetchBattle(this.state.divisionId);
   }
+  //handle switching between battles
+  componentDidUpdate (prevProps) {
+    let oldId = prevProps.match.params.divisionId;
+    let newId = this.props.match.params.divisionId;
+    if (newId !== oldId)
+      this.props.fetchBattle();
+  }
   componentWillUnmount(){
     this.props.clearBattle();
   }

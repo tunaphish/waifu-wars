@@ -12,8 +12,8 @@ class DivisionList extends Component {
   renderDivisions() {
     return this.props.divisionList.map(({ divisionName, divisionId }) => {
       return (
-        <Link to={`/division/${divisionId}/battle`} key={divisionId}>
-          <li className='collection-item'><span className='title'>{divisionName}</span></li>
+        <Link to={`/division/${divisionId}/battle`} className="waves-effect" key={divisionId}>
+          <li><span className='title'>{divisionName}</span></li>
         </Link>
       )
     })
@@ -23,7 +23,7 @@ class DivisionList extends Component {
     if (this.props.divisionList.length === 0) return <Preloader />
 
     return (
-      <ul className='collection'>
+      <ul>
         {this.renderDivisions()}
       </ul>
     )

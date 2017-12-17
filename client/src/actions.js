@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const fetchDivisionList = () => async dispatch => {
-  const res = await axios.get('../api/division/list');
+  const res = await axios.get('../../api/division/list');
   dispatch({type: 'FETCH_DIVISION_LIST', payload: res.data});
 }
 
