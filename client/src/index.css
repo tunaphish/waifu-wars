@@ -3,6 +3,9 @@ html, body, .container, .page, #root {
   min-height: 98vh;
   flex-direction: column;
   font-family: 'Raleway', sans-serif;
+
+  background: pink;
+  background: url('./texture.png');
 }
 
 nav {
@@ -10,24 +13,44 @@ nav {
   margin-bottom: 10px;
 }
 
+table {
+  background: white;
+}
+
 .brand-logo, .versus, .waifu-card {
   font-family: 'Megrim', cursive;
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+  text-shadow: 3px 3px 0 #51B3A3;
+
 }
+
 
 .content {
   flex: 1 0 auto;
+  perspective: 512px;
 }
 
 .waifu-card  {
   font-size: 1.7em;
   color: pink;
   text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
-
-  vertical-align: text-bottom;
   border-radius: 0px;
-  margin: 20px;
-  box-shadow: 10px 10px pink;
+  margin-top: 20px;
+}
+
+.left-waifu {
+  transform: rotateY(7deg);
+  -webkit-transform: rotateY(7deg);
+  -moz-transform: rotateY(7deg);
+  -o-transform: rotateY(7deg);
+  -ms-transform: rotateY(7deg);
+}
+
+.right-waifu {
+  transform: rotateY(-7deg);
+  -webkit-transform: rotateY(-7deg);
+  -moz-transform: rotateY(-7deg);
+  -o-transform: rotateY(-7deg);
+  -ms-transform: rotateY(-7deg);
 }
 
 .full-screen-preloader {

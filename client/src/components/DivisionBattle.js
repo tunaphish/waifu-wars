@@ -41,6 +41,7 @@ class DivisionBattle extends Component {
             <Waifu
               name={this.props.battle[0].waifuName}
               picture={this.props.battle[0].picture}
+              isLeft = {true}
             />
           </a>
         </div>
