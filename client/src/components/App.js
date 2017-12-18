@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
-import DivisionList from './DivisionList';
 import DivisionBattle from './DivisionBattle.js'
 import DivisionRanking from './DivisionRanking';
 

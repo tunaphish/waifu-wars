@@ -16,7 +16,7 @@ class Sider extends Component {
           <li><a className="subheader">Division list</a></li>
           <DivisionList />
         </ul>
-        <a href="#" data-activates="slide-out" className="division-list-button">
+        <a data-activates="slide-out" className="division-list-button">
           <i className="fa fa-bars" aria-hidden="true" />
         </a>
       </div>
