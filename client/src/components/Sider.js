@@ -13,10 +13,6 @@ class Sider extends Component {
     return (
       <div>
         <ul id="slide-out" className="side-nav">
-          <li><div className="divider"></div></li>
-          <li><a className="subheader">Subheader</a></li>
-          <li><a className="waves-effect" href="#!">Third Link With Waves</a></li>
-          <li><div className="divider"></div></li>
           <li><a className="subheader">Division list</a></li>
           <DivisionList />
         </ul>
