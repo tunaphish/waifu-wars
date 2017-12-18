@@ -20,7 +20,7 @@ class DivisionBattle extends Component {
     let oldId = prevProps.match.params.divisionId;
     let newId = this.props.match.params.divisionId;
     if (newId !== oldId)
-      this.props.fetchBattle();
+      this.props.fetchBattle(newId);
   }
   componentWillUnmount(){
     this.props.clearBattle();
