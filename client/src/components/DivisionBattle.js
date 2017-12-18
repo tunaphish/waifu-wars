@@ -35,23 +35,28 @@ class DivisionBattle extends Component {
     if (this.props.battle.length === 0) return <Preloader />;
 
     return (
-      <div className='row'>
-        <div className='col s6'>
-          <a onClick={() => this.handleClick(true)}>
-            <Waifu
-              name={this.props.battle[0].waifuName}
-              picture={this.props.battle[0].picture}
-              isLeft = {true}
-            />
-          </a>
+      <div>
+        <div className='row'>
+          <div className='col s6'>
+            <a onClick={() => this.handleClick(true)}>
+              <Waifu
+                name={this.props.battle[0].waifuName}
+                picture={this.props.battle[0].picture}
+                isLeft = {true}
+              />
+            </a>
+          </div>
+          <div className='col s6'>
+            <a onClick={() => this.handleClick(false)}>
+              <Waifu
+                name={this.props.battle[1].waifuName}
+                picture={this.props.battle[1].picture}
+              />
+            </a>
+          </div>
         </div>
-        <div className='col s6'>
-          <a onClick={() => this.handleClick(false)}>
-            <Waifu
-              name={this.props.battle[1].waifuName}
-              picture={this.props.battle[1].picture}
-            />
-          </a>
+        <div className='choose-text'>
+          CHOOSE YOUR WAIFU
         </div>
       </div>
     )
