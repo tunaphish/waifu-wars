@@ -9,7 +9,8 @@ app.use(bodyParser.json());
 
 const mysql = require('mysql2/promise');
 mysql.createConnection(keys).then(db => {
-  require('./routes')(app,db)
+  require('./routes')(app,db);
+  require('./routes-anilist')(app,db);
 
   if (process.env.NODE_ENV === 'production') {
     const path = require('path');

@@ -18,10 +18,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-fetch": "^0.7.0",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "express": "^4.16.2",
-    "mysql2": "^1.5.1",
+    "mysql2": "^1.5.3",
     "nodemon": "^1.12.5"
   }
 }
