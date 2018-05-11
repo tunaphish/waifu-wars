@@ -1,10 +1,5 @@
 import axios from 'axios';
 
-export const fetchDivisionList = () => async dispatch => {
-  const res = await axios.get('../../api/division/list');
-  dispatch({type: 'FETCH_DIVISION_LIST', payload: res.data});
-}
-
 export const fetchBattle = (divisionId = 1) => async dispatch => {
   const res = await axios.get('../../api/division/' + divisionId + '/battle');
   dispatch({type: 'FETCH_BATTLE', payload: res.data});

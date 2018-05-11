@@ -1,8 +1,6 @@
 import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
-
 
 //Redux 
 import reduxThunk from 'redux-thunk';
@@ -35,4 +33,3 @@ ReactDOM.render(
   ,
   document.getElementById('root')
 );
-registerServiceWorker();
