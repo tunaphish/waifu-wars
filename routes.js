@@ -53,9 +53,4 @@ module.exports = (app,db) => {
 
     res.send('updated');
   });
-
-  app.get('/api/waifu/:waifuId', async (req,res) => {
-    const [rows, fields] = await db.execute(waifuQuery, [req.params.waifuId]);
-    res.send(rows);
-  });
 }

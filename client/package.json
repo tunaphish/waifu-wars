@@ -11,8 +11,13 @@
     }
   },
   "dependencies": {
+    "apollo-boost": "^0.1.6",
     "axios": "^0.17.1",
+    "enzyme": "^3.3.0",
+    "graphql": "^0.13.0",
+    "graphql-tag": "^2.9.2",
     "react": "^16.2.0",
+    "react-apollo": "^2.1.4",
     "react-dom": "^16.2.0",
     "react-materialize": "^1.1.1",
     "react-redux": "^5.0.6",
