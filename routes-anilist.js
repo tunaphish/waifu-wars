@@ -1,30 +1,64 @@
-module.exports = (app,db) => {
-  
-  app.get('/graphql', async (req,res) => {
-    const { createApolloFetch } = require('apollo-fetch');
-    const fetch = createApolloFetch({
-      uri: 'https://graphql.anilist.co',
-    });
+const { createApolloFetch } = require('apollo-fetch');
+const fetch = createApolloFetch({
+  uri: 'https://graphql.anilist.co',
+});
 
-    const query = `
-        query ($id: Int) { 
-          Media (id: $id, type: ANIME) {
-            id
-            title {
-              romaji
-              english
-              native
-            }
-          }
+const animeListQuery = `
+query ($page: Int, $perPage: Int) {
+  Page (page: $page, perPage: $perPage) {
+    media(
+      type: ANIME, 
+      sort: POPULARITY_DESC,
+      season: SPRING,
+      seasonYear:2018
+    ) {
+      title {
+        romaji
+        english
+      }
+    }
+  }
+}
+`;
+let variables = {
+    page: 1,
+    perPage: 10
+};
+
+const animeRankQuery = `
+query ($search: String) {
+  Media(search: $search) {
+    characters (role: MAIN){
+      pageInfo {
+        total
+        perPage
+        currentPage
+        lastPage
+        hasNextPage
+      }
+      nodes {     
+        name {
+          first
+          last
+          native
         }
-      `
-    const variables = {
-      id: 15125
-    };
+        image {
+          large
+        }
+        siteUrl
+      }      
+    }
+  }
+}
+`;
 
-    res.send(await fetch ({
-      query,
-      variables
-    }));
+module.exports = (app,db) => { 
+  app.get('/api2/anime/list', async (req,res) => {
+    res.send(await fetch ({ query: animeListQuery, variables }));
+  });  
+
+  app.get('/api2/anime/:animeName/rank', async (req, res) => {
+    variables.search = req.params.animeName;
+    res.send(await fetch ({ query: animeRankQuery, variables }));
   });
 }

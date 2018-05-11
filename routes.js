@@ -23,8 +23,6 @@ const waifuQuery = `SELECT rank, divisionId
   AND r.divisionWaifuId = dw.divisionWaifuId
   ORDER BY divisionId DESC, date DESC;`;
 
-
-
 module.exports = (app,db) => {
   app.get('/api/division/list', async (req,res) => {
     const [rows, fields] = await db.execute(divisionListQuery);
