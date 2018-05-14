@@ -4,24 +4,6 @@ import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import Preloader from './Preloader';
 
-const ANIME_FEED_QUERY =  gql`
-  query {
-    Page (page: 10, perPage: 10) {
-      media(
-        type: ANIME, 
-        sort: POPULARITY_DESC,
-        season: SPRING,
-        seasonYear:2018
-      ) {
-        id,
-        title {
-          romaji
-          english
-        }
-      }
-    }
-  }
-`;
 
 const AnimeList = (props) => {
   if (props.data && props.data.loading) return <Preloader />
@@ -40,5 +22,24 @@ const AnimeList = (props) => {
     </ul>
   )  
 }
+
+const ANIME_FEED_QUERY =  gql`
+  query {
+    Page (page: 10, perPage: 10) {
+      media(
+        type: ANIME, 
+        sort: POPULARITY_DESC,
+        season: SPRING,
+        seasonYear:2018
+      ) {
+        id,
+        title {
+          romaji
+          english
+        }
+      }
+    }
+  }
+`;
 
 export default graphql(ANIME_FEED_QUERY)(AnimeList);

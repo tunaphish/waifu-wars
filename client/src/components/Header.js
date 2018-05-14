@@ -21,7 +21,7 @@ export default (props) => {
       <div className='nav-wrapper flow-text'>
         <ul>
           <li><Sider /></li>
-          {divisionLink}
+          {/*divisionLink*/}
         </ul>
         <div className='right brand-logo'><Link to='/'>WAIFU WARS</Link></div>
       </div>
