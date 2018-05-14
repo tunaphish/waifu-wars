@@ -5,9 +5,6 @@ import Waifu from './Waifu.js';
 import Preloader from './Preloader';
 
 class Battle extends Component {
-  
-  TOTAL_WAIFUS = 63660;
-
   handleClick(isLeft) {
 
   }
@@ -45,8 +42,8 @@ class Battle extends Component {
 }
 
 const BATTLE_QUERY = gql`
-  query {
-    leftChar:Character(id: 1) {
+  query ($leftId: Int!, $rightId: Int!) {
+    leftChar:Character(id: $leftId) {
       name {
         first
         last
@@ -55,7 +52,7 @@ const BATTLE_QUERY = gql`
         large
       }
     }
-    rightChar:Character(id: 5) {
+    rightChar:Character(id: $rightId) {
       name {
         first
         last
@@ -67,5 +64,15 @@ const BATTLE_QUERY = gql`
   }
 `;
 
-export default graphql(BATTLE_QUERY)(Battle)
+const TOTAL_WAIFUS = 63660;
+const config = {
+  options: {
+    variables: {
+      leftId: 1,//Math.floor(Math.random() * TOTAL_WAIFUS),
+      rightId: 2//Math.floor(Math.random() * TOTAL_WAIFUS),
+    }
+  }
+}
+
+export default graphql(BATTLE_QUERY, config)(Battle)
 

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './Header';
 import Battle from './Battle.js'
-import DivisionRanking from './DivisionRanking';
+import Ranking from './Ranking';
 
 import image404 from '../404.jpg';
 const fourOhFour = () => <img src={image404} alt='404' />;
@@ -18,7 +18,7 @@ export default () => {
             <Switch>
             {/*Added keys to DivisionBattles to force remounting*/}
               <Route exact path='/division/:divisionId/battle' component={Battle} />
-              <Route exact path='/division/:divisionId/ranking' component={DivisionRanking} />
+              <Route exact path='/division/:divisionId/ranking' component={Ranking} />
               <Route exact path='/' component={Battle} key={'index'}/>
               <Route component={fourOhFour} />
             </Switch>
