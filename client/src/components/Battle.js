@@ -6,6 +6,8 @@ import Preloader from './Preloader';
 
 class Battle extends Component {
   
+  TOTAL_WAIFUS = 63660;
+
   handleClick(isLeft) {
 
   }
