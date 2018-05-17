@@ -13,7 +13,6 @@
   "dependencies": {
     "apollo-boost": "^0.1.6",
     "axios": "^0.17.1",
-    "enzyme": "^3.3.0",
     "graphql": "^0.13.0",
     "graphql-tag": "^2.9.2",
     "react": "^16.2.0",
