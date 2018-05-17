@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ name, picture, isLeft }) => {
+export default ({firstName, lastName, picture, isLeft }) => {
   //Only usage of inline styling because background image needs to be dynamic
   //Otherwise majority of styling uses materialize css or index.css in root src folder
   const style = {
@@ -15,7 +15,7 @@ export default ({ name, picture, isLeft }) => {
       className={ (isLeft ? 'left-waifu ' : 'right-waifu ') + 'card large waifu-card'}
       style={style}
     >
-      {name}
+      {firstName + (lastName !== null ? " " + lastName : "")}
     </div>
   )
 }

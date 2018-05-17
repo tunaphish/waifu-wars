@@ -6,8 +6,14 @@ import Preloader from './Preloader';
 const TOTAL_WAIFUS = 63660;
 
 class Battle extends Component {
-  handleClick(isLeft) {
+  state = {
+     leftId: Math.floor(Math.random() * TOTAL_WAIFUS),
+     rightId: Math.floor(Math.random() * TOTAL_WAIFUS),
+  }
 
+  handleClick(isLeft) {
+    this.setState({ leftId: Math.floor(Math.random() * TOTAL_WAIFUS), rightId: Math.floor(Math.random() * TOTAL_WAIFUS) });
+    console.log(this.state.leftId + " " + this.state.rightId);
   }
 
   render() {
@@ -19,7 +25,8 @@ class Battle extends Component {
         <div className='col s6'>
           <a onClick={() => this.handleClick(true)}>
             <Waifu
-              name={this.props.data.leftChar.name.first + (this.props.data.leftChar.name.last !== null ? " " + this.props.data.leftChar.name.last : "") }
+              firstName={this.props.data.leftChar.name.first}
+              lastName={this.props.data.leftChar.name.last}
               picture={this.props.data.leftChar.image.large}
               isLeft = {true}
             />
@@ -28,7 +35,8 @@ class Battle extends Component {
         <div className='col s6'>
           <a onClick={() => this.handleClick(false)}>
             <Waifu
-              name={this.props.data.rightChar.name.first + (this.props.data.rightChar.name.last !== null ? " " + this.props.data.rightChar.name.last : "") }
+              firstName={this.props.data.rightChar.name.first}
+              lastName={this.props.data.rightChar.name.last}
               picture={this.props.data.rightChar.image.large}
             />
           </a>
@@ -64,6 +72,7 @@ const BATTLE_QUERY = gql`
 
 const leftId = Math.floor(Math.random() * TOTAL_WAIFUS);
 const rightId = Math.floor(Math.random() * TOTAL_WAIFUS);
+
 const config = {
   options: {
     variables: {

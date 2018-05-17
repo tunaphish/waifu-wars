@@ -5,7 +5,7 @@ import Header from './Header';
 import BattleContainer from './BattleContainer.js'
 import Ranking from './Ranking';
 
-import image404 from '../404.jpg';
+import image404 from '../img/404.jpg';
 const fourOhFour = () => <img src={image404} alt='404' />;
 
 export default () => {

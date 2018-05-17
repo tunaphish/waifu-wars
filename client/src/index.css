@@ -5,7 +5,7 @@ html, body, .container, .page, #root {
   font-family: 'Raleway', sans-serif;
 
   background: pink;
-  background: url('./texture.png');
+  background: url('./img/texture.png');
 }
 
 nav {
