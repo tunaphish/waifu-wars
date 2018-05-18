@@ -25,9 +25,9 @@ class Battle extends Component {
         <div className='col s6'>
           <a onClick={() => this.handleClick(true)}>
             <Waifu
-              firstName={this.props.data.leftChar.name.first}
-              lastName={this.props.data.leftChar.name.last}
-              picture={this.props.data.leftChar.image.large}
+              firstName={this.props.data.leftChar.characters[0].name.first}
+              lastName={this.props.data.leftChar.characters[0].name.last}
+              picture={this.props.data.leftChar.characters[0].image.large}
               isLeft = {true}
             />
           </a>
@@ -35,9 +35,9 @@ class Battle extends Component {
         <div className='col s6'>
           <a onClick={() => this.handleClick(false)}>
             <Waifu
-              firstName={this.props.data.rightChar.name.first}
-              lastName={this.props.data.rightChar.name.last}
-              picture={this.props.data.rightChar.image.large}
+              firstName={this.props.data.rightChar.characters[0].name.first}
+              lastName={this.props.data.rightChar.characters[0].name.last}
+              picture={this.props.data.rightChar.characters[0].image.large}
             />
           </a>
         </div>
@@ -48,22 +48,26 @@ class Battle extends Component {
 
 const BATTLE_QUERY = gql`
   query ($leftId: Int!, $rightId: Int!) {
-    leftChar:Character(id: $leftId) {
-      name {
-        first
-        last
-      }
-      image {
-        large
+    leftChar:Page(page: $leftId, perPage:1 ){
+      characters {
+        name {
+          first
+          last
+        }
+        image {
+          large
+        }
       }
     }
-    rightChar:Character(id: $rightId) {
-      name {
-        first
-        last
-      }
-      image {
-        large
+    rightChar:Page(page: $rightId, perPage:1 ){
+      characters {
+        name {
+          first
+          last
+        }
+        image {
+          large
+        }
       }
     }
   }
