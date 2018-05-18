@@ -17,17 +17,18 @@ class Battle extends Component {
   }
 
   render() {
-    if (this.props.data && this.props.data.loading) return <Preloader />;
-    if (this.props.data.error) return <div>Error</div>;
+    const { data: { loading, error, leftChar, rightChar, updateQuery }} = this.props;
+    if (loading) return <Preloader />;
+    if (error) return <div>Error</div>;
 
     return (
       <div className='row'>
         <div className='col s6'>
-          <a onClick={() => this.handleClick(true)}>
+          <a onClick={() => updateQuery()}>
             <Waifu
-              firstName={this.props.data.leftChar.characters[0].name.first}
-              lastName={this.props.data.leftChar.characters[0].name.last}
-              picture={this.props.data.leftChar.characters[0].image.large}
+              firstName={leftChar.characters[0].name.first}
+              lastName={leftChar.characters[0].name.last}
+              picture={leftChar.characters[0].image.large}
               isLeft = {true}
             />
           </a>
@@ -35,9 +36,9 @@ class Battle extends Component {
         <div className='col s6'>
           <a onClick={() => this.handleClick(false)}>
             <Waifu
-              firstName={this.props.data.rightChar.characters[0].name.first}
-              lastName={this.props.data.rightChar.characters[0].name.last}
-              picture={this.props.data.rightChar.characters[0].image.large}
+              firstName={rightChar.characters[0].name.first}
+              lastName={rightChar.characters[0].name.last}
+              picture={rightChar.characters[0].image.large}
             />
           </a>
         </div>
