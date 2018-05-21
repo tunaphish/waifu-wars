@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Header from './Header';
-import BattleContainer from './BattleContainer.js'
+import Battle from './Battle'
 import Ranking from './Ranking';
 
 import image404 from '../img/404.jpg';
@@ -17,9 +17,9 @@ export default () => {
           <div className='content'>
             <Switch>
             {/*Added keys to DivisionBattles to force remounting*/}
-              <Route exact path='/division/:divisionId/battle' component={BattleContainer} />
+              <Route exact path='/division/:divisionId/battle' component={Battle} />
               <Route exact path='/division/:divisionId/ranking' component={Ranking} />
-              <Route exact path='/' component={BattleContainer} key={'index'}/>
+              <Route exact path='/' component={Battle} key={'index'}/>
               <Route component={fourOhFour} />
             </Switch>
           </div>
