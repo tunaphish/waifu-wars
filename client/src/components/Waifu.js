@@ -12,13 +12,6 @@ const animation = domObject => anime({
 });
 
 class Waifu extends Component {
-  componentDidMount() {
-    console.log("mount")
-  }
-  componentWillUpdate() {
-    console.log("update")
-  }
-
   render() {
     const { data: { loading, error, Page }} = this.props;
     if (loading) return <Preloader />;
