@@ -22,12 +22,12 @@ export default class extends Component {
         <div className='row'>
           <div className='col s6'>
             <a onClick = {() => this.handleClick()}>
-              <Waifu id={this.state.leftId} isLeft={true}/>
+              <Waifu key={this.state.leftId} id={this.state.leftId} isLeft={true}/>
             </a>
           </div>
           <div className='col s6'>
             <a onClick = {() => this.handleClick()}>
-              <Waifu id={this.state.rightId}/>
+              <Waifu key={this.state.rightId} id={this.state.rightId}/>
             </a>
           </div>
         </div>

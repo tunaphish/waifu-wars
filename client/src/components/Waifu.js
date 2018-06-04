@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import Preloader from './Preloader';
-import { Transition } from 'react-transition-group';
-import anime from 'animejs';
-
-const animation = domObject => anime({
-  targets: domObject,
-  rotate: 360,
-  duration: 1000
-});
+import { Spring } from 'react-spring';
 
 class Waifu extends Component {
   render() {
@@ -18,25 +11,24 @@ class Waifu extends Component {
     if (error) return <div>Error</div>;
 
     return (
-      <Transition
-        appear
-        onEntering={animation}
-        onExiting={animation}
-        in={true}
-        timeout={1000}
+      <Spring
+        from={{ opacity: 0 }}
+        to={{ opacity: 1 }}
       >
-        <div
-          className={ (this.props.isLeft ? 'left-waifu ' : 'right-waifu ') + 'card large waifu-card'}
-          style={{
-            backgroundImage: `url(${Page.characters[0].image.large})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: 'contain',
-          }}
-        >
-          {Page.characters[0].name.first + (Page.characters[0].name.last !== null ? " " + Page.characters[0].name.last : "")}
-        </div>
-      </Transition>
+        {styles => <div
+            className={ (this.props.isLeft ? 'left-waifu ' : 'right-waifu ') + 'card large waifu-card'}
+            style={{
+              backgroundImage: `url(${Page.characters[0].image.large})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              backgroundSize: 'contain',
+              ...styles
+            }}
+          >        
+            {Page.characters[0].name.first + (Page.characters[0].name.last !== null ? " " + Page.characters[0].name.last : "")}
+          </div>
+        }
+      </Spring>
     )
   }
 } 
@@ -45,6 +37,7 @@ const WAIFU_QUERY = gql`
   query ($id: Int!) {
     Page(page: $id, perPage:1 ){
       characters {
+        id
         name {
           first
           last
