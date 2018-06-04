@@ -2,20 +2,12 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": {
-    "/api/*": {
-      "target": "http://localhost:5000"
-    },
-    "/images/*": {
-      "target": "http://localhost:5000"
-    }
-  },
   "dependencies": {
-    "anime": "^0.1.2",
+    "animejs": "^2.2.0",
     "apollo-boost": "^0.1.6",
     "graphql": "^0.13.0",
     "graphql-tag": "^2.9.2",
-    "react": "^16.2.0",
+    "react": "^16.4.0",
     "react-apollo": "^2.1.4",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",

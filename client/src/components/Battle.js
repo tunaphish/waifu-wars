@@ -38,6 +38,3 @@ export default class extends Component {
     )  
   }
 }
-
-//const id = Math.floor(Math.random() * TOTAL_WAIFUS);
-
